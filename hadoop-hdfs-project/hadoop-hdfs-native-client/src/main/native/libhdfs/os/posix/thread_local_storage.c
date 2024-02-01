@@ -47,7 +47,7 @@ void hdfsThreadDestructor(void *v)
   jsize vmNum = 0;
   auto res = JNI_GetCreatedJavaVMs(&vm, 1, &vmNum);
   if (res != JNI_OK || vmNum <= 0) {
-    fprint(stderr, "JVM exits\n");
+    fprintf(stderr, "JVM exits\n");
     return;
   }
   ret = (*vm)->DetachCurrentThread(vm);
